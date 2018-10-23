@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class multiplicationSign {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double a = Double.parseDouble(input.nextLine());
+        double b = Double.parseDouble(input.nextLine());
+        double c = Double.parseDouble(input.nextLine());
+        int negativeCount = 0;
+        if (a < 0){
+            negativeCount++;
+        }
+        if (b < 0){
+            negativeCount++;
+        }
+        if (c < 0){
+            negativeCount++;
+        }
+        if (a !=0 && b!=0 && c!=0 && negativeCount % 2 == 0){
+            System.out.println("positive");
+        }
+        if (a !=0 && b!=0 && c!=0 && negativeCount % 2 != 0){
+            System.out.println("negative");
+        }
+        if (a == 0 || b == 0 || c == 0){
+            System.out.println("zero");
+        }
+    }
+}
