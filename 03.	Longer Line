@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class longerLine {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double X1 = Double.parseDouble(input.nextLine());
+        double Y1 = Double.parseDouble(input.nextLine());
+        double X2 = Double.parseDouble(input.nextLine());
+        double Y2 = Double.parseDouble(input.nextLine());
+        double X3 = Double.parseDouble(input.nextLine());
+        double Y3 = Double.parseDouble(input.nextLine());
+        double X4 = Double.parseDouble(input.nextLine());
+        double Y4 = Double.parseDouble(input.nextLine());
+        double firstLine = Math.sqrt(Math.pow(X1 - X2, 2) + Math.pow(Y1 - Y2, 2));
+        double secondLine = Math.sqrt(Math.pow(X3 - X4, 2) + Math.pow(Y3 - Y4, 2));
+        if (firstLine >= secondLine) {
+            printCenterPoint(X1, Y1, X2, Y2);
+            printPoint(X1, Y1, X2, Y2);
+        } else {
+            printCenterPoint(X3, Y3, X4, Y4);
+            printPoint(X3, Y3, X4, Y4);
+        }
+    }
+
+    private static void printCenterPoint(double X1, double Y1, double X2, double Y2) {
+        double firstLine = Math.pow(X1, 2) + Math.pow(Y1, 2);
+        double secondLine = Math.pow(X2, 2) + Math.pow(Y2, 2);
+        if (firstLine <= secondLine) {
+            System.out.printf("(%.0f, %.0f)", X1, Y1);
+        } else {
+            System.out.printf("(%.0f, %.0f)", X2, Y2);
+        }
+    }
+
+    private static void printPoint(double X1, double Y1, double X2, double Y2) {
+        double firstLine = Math.pow(X1, 2) + Math.pow(Y1, 2);
+        double secondLine = Math.pow(X2, 2) + Math.pow(Y2, 2);
+        if (firstLine > secondLine) {
+            System.out.printf("(%.0f, %.0f)", X1, Y1);
+        } else {
+            System.out.printf("(%.0f, %.0f)", X2, Y2);
+        }
+    }
+}
