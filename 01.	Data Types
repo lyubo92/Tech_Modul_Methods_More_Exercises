@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class dataTypes {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String dataType = input.nextLine();
+        if (dataType.equals("int")){
+            int num = Integer.parseInt(input.nextLine());
+            System.out.println(num * 2);
+        }else if (dataType.equals("real")){
+            double num = Double.parseDouble(input.nextLine());
+            System.out.printf("%.2f", num * 1.5);
+        }else if (dataType.equals("string")){
+            String text = input.nextLine();
+            System.out.println("$" + text + "$");
+        }
+    }
+}
